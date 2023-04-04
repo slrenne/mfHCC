@@ -1,5 +1,7 @@
 # Multifocal HCC
 
+![Alt text](./variables.png)
+
 Given heach patient ($k$), each new clone ($j$), each non-clonal nodule ($i$), we will try to model, in the setting of Hepatocellular Carcinoma (HCC) the multifocality process. In our setting some of the nodules have been biopsied several times ($h$) and some nodule has not been biopsied but recorded ($z$). Therefore the total number of intrahepatic nodules in each patients ($N_{nod[k]}$) is the result of the sum of the maximum number nodules of each new clone ($i^{\text{max}}_j$) and the non-biopsied nodules ($z$): 
 
 ```math

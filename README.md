@@ -8,9 +8,11 @@ N_{nod[k]} = i^{\text{max}}_{j=1} + \cdots + i^{\text{max}}_{j=j^{\text{max}}} +
 Therefore we can simplify with:
 
 ```math
+N_{nod[k]} = \sum_{j=1}^{\text{max}(j)}i_j + z\\
+```
 
+```math
 \begin{align}
-N_{nod[k]} &= \sum_{j=1}^{\text{max}(j)}i_j + z\\
 \text{max}(j_{[k]}) &= f(BLD_{[k]}) + T_j\\ 
 \text{max}(i_{[j,k]}) &= f(VETC_{P[j,k]}) + f(EMT_{P[j,k]}) + T_i \\
 VETC_{P[j,k]} &= f(VETC_{[h,i,j,k]}) \\

@@ -16,7 +16,9 @@ N_{nod[k]} &= \sum_{j=1}^{\text{max}(j)}i_j + z\\
 VETC_{P[j,k]} &= f(VETC_{[h,i,j,k]}) \\
 EMT_{P[j,k]} &= f(EMT_{[h,i,j,k]}) \\
 z &= f(EMT_{P[j,k]}) + f(VETC_{P[j,k]}) \\
+DM &= f(VETC_{P[j,k]}) + f(EMT_{P[j,k]}) + T_d \\
 T_j &= f(age) \\ 
-T_i &= f(age)
+T_i &= f(age) \\
+T_d &= f(age)
 \end{align}
 ```

@@ -11,9 +11,12 @@ Therefore we can simplify with:
 
 \begin{align}
 N_{nod[k]} &= \sum_{j=1}^{\text{max}(j)}i_j + z\\
-\text{max}(j_{[k]}) &= f(BLD_{[k]})\\
-\text{max}(i_{[j,k]}) &= f(VETC_{P[j,k]}) + f(EMT_{P[j,k]}) \\
+\text{max}(j_{[k]}) &= f(BLD_{[k]}) + T_j\\ 
+\text{max}(i_{[j,k]}) &= f(VETC_{P[j,k]}) + f(EMT_{P[j,k]}) + T_i \\
 VETC_{P[j,k]} &= f(VETC_{[h,i,j,k]}) \\
-EMT_{P[j,k]} &= f(EMT_{[h,i,j,k]})
+EMT_{P[j,k]} &= f(EMT_{[h,i,j,k]}) \\
+z &= f(EMT_{P[j,k]}) + f(VETC_{P[j,k]}) \\
+T_j &= f(age) \\ 
+T_i &= f(age)
 \end{align}
 ```

@@ -11,6 +11,8 @@ Therefore we can simplify with:
 N_{nod[k]} = \sum_{j=1}^{\text{max}(j)}i_j + z\\
 ```
 
+And then model the total number of clones in each patient (max $j_{[k]}$ ) as a function of the background liver disease and its time ($f(BLD_{[k]}) + T_j$)
+
 ```math
 \begin{align}
 \text{max}(j_{[k]}) &= f(BLD_{[k]}) + T_j\\ 

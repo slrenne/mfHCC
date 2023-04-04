@@ -1,0 +1,36 @@
+dag {
+bb="-8.508,-6.998,8.608,6.803"
+BLD [pos="-2.418,-2.998"]
+DM [pos="7.742,-6.501"]
+EMTh [pos="-7.353,-6.602"]
+EMTp [latent,pos="-1.350,-6.586"]
+N [pos="7.396,-3.503"]
+Td [latent,pos="1.565,-4.955"]
+Ti [latent,pos="1.565,-4.443"]
+Tj [latent,pos="1.652,-3.961"]
+VETCh [pos="-7.411,-6.058"]
+VETCp [latent,pos="-1.350,-6.074"]
+age [pos="-7.382,-4.590"]
+i [pos="7.511,-5.709"]
+j [pos="5.144,-4.233"]
+z [pos="5.087,-4.924"]
+BLD -> j
+BLD -> z
+EMTh -> EMTp
+EMTp -> DM
+EMTp -> i
+EMTp -> z
+Td -> DM
+Ti -> i
+Tj -> j
+VETCh -> VETCp
+VETCp -> DM
+VETCp -> i
+VETCp -> z
+age -> Td
+age -> Ti
+age -> Tj
+i -> N
+j -> N
+z -> N
+}

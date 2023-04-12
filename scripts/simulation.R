@@ -22,6 +22,9 @@ Tj <- rnorm( n = N , mean = A, sd = 1)
 # background liver disease 
 # looking at the DB I had some difficulty to find something clear
 # therefore for the time being I used a normal distribution
+# fibrosis 0-4
+# inflammation 0-3
+# about 10% missing data.
 
 ## TO DISCUSS ##
 
@@ -47,7 +50,7 @@ plot(d_j)
 
 # so up to now we simulated the number of new clones for each patient
 # however the total number of nodules depends also from the intra-hepatic 
-# metastases of each clone j of each patient 
+# metastases of each clone j of each patient k
 
 # to estimate the metastatic potential of each clone j of each patient k 
 # let's prepare a matrix both for the EMT and the VETC
@@ -56,6 +59,7 @@ col.max <- max(j) # the columns needs to be the max of j
 
 # we will store the EMT of each clone in the matrix Ekj
 # let's suppose that the EMT will be present in a 20% of clones
+# FOR GINA to CHECK #
 
 Ekj <- matrix( data = NA, nrow = N, ncol = col.max)
 for ( i in k ) {
@@ -88,9 +92,9 @@ for ( i in k ) {
 # now let simulate the number of intrahepatic mets for each clone
 # we will use a Poisson distribution 
 # keeping the simulation 
-alpha_ji <- 0.2
-beta_ji <- 0.1
-gamma_ji <- 0.1
+alpha_ji <- 0.1
+beta_ji <- 0.05
+gamma_ji <- 0.05
 
 
 i_kj <- matrix( data = NA, nrow = N, ncol = col.max)

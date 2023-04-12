@@ -28,4 +28,4 @@ T_i &= f(age) \\
 T_d &= f(age)
 \end{align}
 ```
-![Alt text](./dagitty-model.svg)
+![Alt text](./dagitty-model.png)

@@ -1,9 +1,11 @@
 dag {
 bb="-8.508,-6.998,8.608,6.803"
-BLD [pos="-2.418,-2.998"]
+BLD [latent,pos="-7.267,-2.985"]
 DM [pos="7.742,-6.501"]
 EMTh [pos="-7.353,-6.602"]
 EMTp [latent,pos="-1.350,-6.586"]
+Fibrosis [pos="2.114,-3.008"]
+Inflammation [pos="1.912,-3.444"]
 N [pos="7.396,-3.503"]
 Td [latent,pos="1.565,-4.955"]
 Ti [latent,pos="1.565,-4.443"]
@@ -12,8 +14,10 @@ VETCh [pos="-7.411,-6.058"]
 VETCp [latent,pos="-1.350,-6.074"]
 age [pos="-7.382,-4.590"]
 i [pos="7.511,-5.709"]
-j [pos="5.144,-4.233"]
-z [pos="5.087,-4.924"]
+j [pos="4.769,-3.819"]
+z [pos="4.798,-4.535"]
+BLD -> Fibrosis
+BLD -> Inflammation
 BLD -> j
 BLD -> z
 EMTh -> EMTp

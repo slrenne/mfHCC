@@ -107,3 +107,25 @@ for ( i in k ) {
     i_kj[ i, ii ] <-  rpois( n = 1, lambda = lambda) 
   }
 }
+
+#summarising
+
+db <-   data.frame(
+        k, # Patient's Id
+        A, # Patient's age
+        B, # Patient's background liver disease
+        jmax = j, # number of (new) clones for each patient
+        E = Ekj, # presence of EMT in each patient (row) and clone (col)
+        V = Vkj, # presence of VETC in each patient (row) and clone (col)
+        i = i_kj  # number of new clonally related nodules in each patient (row) and clone (col)
+      )
+
+db <- db %>% 
+     pivot_longer(cols=-(1:4), # ignores id, age, bld, and the new clones
+     names_pattern = "(.)\\.(.*)$",  # separate the names using the '.' try head(db) before running this 
+     names_to = c("cloneChar", "j"))  %>%  
+  drop_na(value) %>%  # removes the NA that are here because of the matrix structure
+  mutate(j = as.integer(j)) %>% 
+  pivot_wider(names_from = cloneChar, values_from = value)
+
+write.csv(db, 'input/sim.csv')

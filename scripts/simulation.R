@@ -1,6 +1,9 @@
 # set seed
 set.seed(230412) 
 
+library(tidyr)
+library(dplyr)
+
 # set the patient number that correspond to the patient's ID
 N <- 1e4
 k <- 1:N

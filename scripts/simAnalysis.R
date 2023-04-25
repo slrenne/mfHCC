@@ -61,7 +61,7 @@ plot(NULL,
      xlab = 'value', 
      ylab = 'density',
      main = 'Coefficient recovery, multifocal occurrence')
-abline(v = c(0.2, 0.3, 0.0), col = 1:3, lty = c(2,1,2))
+abline(v = c(0.2, 0.3, 0.0), col = 1:3, lty = 2)
 for (i in 1:3) dens(post[[i]], add = TRUE, lwd = 3, col = i)
 legend('top', legend = c('intercept', 'BLD', 'age'), lwd = 3, col = 1:3)
 dev.off()

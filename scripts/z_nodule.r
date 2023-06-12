@@ -29,3 +29,5 @@ dat <- list (
 
 m <- cstan( file = 'scripts/N_model.stan', data = dat, chains = 1, cores = 1, iter = 500 )
 
+post <- extract.samples(m)
+saveRDS(post, file = "output/post.rds")

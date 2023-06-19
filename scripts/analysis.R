@@ -37,3 +37,20 @@ m.i <- ulam(
     sigma_V ~ dexp( 1 ),
     sigma_E ~ dexp( 1 )
   ), data = dat, chains = 4 , cores = 4, iter = 1000, cmdstan = TRUE)
+
+
+
+post.mi <- extract.samples(m.i)
+par(mfrow = c(1,1))
+
+pdf('output/coef_rec_IM.pdf')
+plot(NULL, 
+     xlim = c(-2.5, 0.5),
+     ylim = c(0,3.2),
+     xlab = 'value', 
+     ylab = 'density',
+     main = 'Coefficient fit, intrahepatic mets')
+abline(v = 0, lty = 2)
+for (i in 1:3) dens(post.mi[[i]], add = TRUE, lwd = 3, col = i)
+legend('topleft', legend = c('intercept', 'EMT & VETC', 'age'), lwd = 3, col = 1:3)
+dev.off()

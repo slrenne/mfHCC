@@ -43,7 +43,7 @@ m.i <- ulam(
 post.mi <- extract.samples(m.i)
 par(mfrow = c(1,1))
 
-pdf('output/coef_rec_IM.pdf')
+pdf('output/coef_realdata_IM.pdf')
 plot(NULL, 
      xlim = c(-2.5, 0.5),
      ylim = c(0,3.2),

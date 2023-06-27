@@ -41,7 +41,16 @@ model{
      for ( i in 1:n_row ) {
         lambda_i[i] = alpha_i + beta_i * E[i] + gamma_i * V[i] + delta_i * A[i];
         lambda_i[i] = exp(lambda_i[i]);
-        I[i] ~ poisson( lambda_i[i] ); // T[1,];
+        I[i] ~ poisson( lambda_i[i] ); 
     }
 }
-
+generated quantities {
+    array[n_row] int sim_I;
+    array[n_row] real lambda_i; 
+    for ( i in 1:n_row ) {
+        lambda_i[i] = alpha_i + beta_i * E[i] + gamma_i * V[i] + delta_i * A[i];
+        lambda_i[i] = exp(lambda_i[i]);
+        sim_I[i] = poisson_rng( lambda_i[i] ); 
+    }
+    
+}

@@ -36,7 +36,8 @@ m.i <- ulam(
     nu_V ~ dnorm( 0 , 0.5 ),
     sigma_V ~ dexp( 1 ),
     sigma_E ~ dexp( 1 )
-  ), data = dat, chains = 4 , cores = 4, iter = 1000, cmdstan = TRUE)
+  ), data = dat, chains = 4 , cores = 8, 
+  iter = 1000, cmdstan = TRUE, threads = 2, sample = FALSE)
 
 
 

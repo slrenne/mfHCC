@@ -36,6 +36,23 @@ m <- cstan( file = 'scripts/N_model.stan',
 
 dashboard(m)
 post <- extract.samples(m)
+
+
+I_k <- function(E, V, A){
+  mu <- with( post, {
+    alpha_i + beta_i * E + gamma_i * V + delta_i * A }) 
+    lambda <-  exp(mu)
+    lambda
+    #mean(lambda <1)
+    # I <- rpois(length(lambda),lambda)
+    # mean(I==0)
+}
+
+lambda <- I_k(-5,-5,3)
+dens(lambda)
+mean(lambda<1)
+post
+
 saveRDS(post, file = "output/post.rds")
 post <- readRDS('output/post.rds')
 
